@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Powered by {{ @VERSION }}</title>
+    <style type="text/css">
+        {{ Web::minify('templates/',array('style.css'),FALSE) }}
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+<h3 style="text-align:center;"><a href="/index.php">GroupDocs PHP SDK Samples</a> - Sample22</h3>
+
+<div class='samplecontent' style="padding:10px;">
+    <i>This sample will show how create or update user and add him to collaborators using PHP SDK</i> <br/>
+    <br />
+    <a href="/docs/sample22.html">Docs for this sample</a>
+    <br />
+    <br/><p>You entered:
+    <p>ClientID = {{@userId}}
+    <p>PrivateKey = {{@privateKey}}
+    <p>FileId = {{@fileId}}
+    <p>Email = {{@email}}
+    <p>First Name = {{@first_name}}
+    <p>Last Name = {{@last_name}}
+    <p>CallBack URL = {{@callbackUrl}}
+    <p><font color="red">{{@error}}{{@message}}</font>
+    <div id="requestForm" style="padding:20px; border:1px solid black;">
+        <p> Enter data for request and press "Make request" button </p>
+        <form action="/sample22" method = "post" enctype = 'multipart/form-data'>
+            <br />
+            <label for='client_id'>GroupDocs Client ID</label>
+            <br />
+            <input type='text', name='client_id' value="{{@userId}}" />
+            <br />
+            <label for='private_key'>GroupDocs PrivateKey</label>
+            <br />
+            <input type='text', name='private_key'  value="{{@privateKey}}" />
+            <br />
+            <label for='email'>Email</label>
+            <br />
+            <input type='text', name='email' value="{{@email}}" />
+            <br />
+            <label for='first_name'>First Name</label>
+            <br />
+            <input type='text', name='first_name'  value="{{@first_name}}" />
+            <br />
+            <label for='last_name'>Last Name</label>
+            <br />
+            <input type='text', name='last_name'  value="{{@last_name}}" />
+            <br />
+            <label for='fileId'>FileID</label>
+            <br />
+            <input type='text', name='fileId'  value="{{@fileId}}" />
+            <br />
+            <label for='callbackUrl'>callbackUrl</label>
+            <br />
+            <input type='text', name='callbackUrl'  value="{{@callbackURL}}" />
+            <br />
+            <label for='server_type'>Choose Server</label>
+            <br />
+                <select name="server_type" id="server_type">
+                    <option selected value="https://api.groupdocs.com/v2.0">Prod</option>
+                    <option value="https://dev-api.groupdocs.com/v2.0">Dev</option>
+                    <option value="https://stage-api.groupdocs.com/v2.0">Stage</option>
+                </select>
+            <br />
+            <input type='submit' value='Make Request'/>
+        </form>
+    </div>
+    <div  style="padding:20px; border:1px solid black;">
+        Result: 
+        <iframe src="{{@url}}"></iframe>
+   </div>
+</div>
+
+ <include href="links.htm" />
+
+</body>
+</html>

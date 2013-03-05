@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Powered by {{ @VERSION }}</title>
+	<style type="text/css">
+		{{ Web::minify('templates/',array('style.css'),FALSE) }}
+	</style>
+</head>
+<body>
+<h3 style="text-align:center;"><a href="/index.php">GroupDocs PHP SDK Samples</a> - Sample9</h3>
+
+<div class='samplecontent' style="padding:10px;">
+   <i>This sample will show how to generate an embedded Viewer URL for particular Document in the GroupDocs account using PHP SDK</i> <br/>
+    <br />
+    <a href="/docs/sample09.html">Docs for this sample</a>
+    <br />
+   <br/><p>You entered: 
+   <p>File Id = {{@fileId}}
+   <p>Height = {{@height}}
+   <p>Width = {{@width}}
+   <p>Viewer URL = {{@url}}
+   <p><font color="red">{{@error}}</font>
+   <div id="requestForm" style="padding:20px; border:1px solid black;">
+   <p> Enter data for request and press "Make request" button </p>
+        <form action="/sample09" method = "post" enctype = 'multipart/form-data'>
+            <label for='private_key'>GroupDocs fileID</label>
+            <br />
+            <input type='text', name='fileId'  value="{{@fileId}}" />
+            <br />
+            <label for='private_key'>Width</label>
+            <br />
+            <input type='text', name='width'  value="{{@width}}" />
+            <br />
+            <label for='private_key'>Height</label>
+            <br />
+            <input type='text', name='height'  value="{{@height}}" />
+            <br />
+            <input type='submit' value='Make Request'/>
+        </form>
+   </div>
+   <div  style="padding:20px; border:1px solid black;">
+        <iframe src="{{@url}}"></iframe>
+   </div>
+   <br/>
+</div>
+
+ <include href="links.htm" />
+</body>
+</html>

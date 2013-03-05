@@ -1,0 +1,12 @@
+language: php
+php:
+  - 5.3
+before_script:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar --dev install
+  - git clone --branch=master --depth=100 --quiet git://github.com/groupdocs/groupdocs-sdk-samples-uitests.git tests/samples-ui-tests
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+script:
+  - phpunit
+  - script/travis.sh

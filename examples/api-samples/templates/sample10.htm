@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Powered by {{ @VERSION }}</title>
+	<style type="text/css">
+		{{ Web::minify('templates/',array('style.css'),FALSE) }}
+	</style>
+</head>
+<body>
+<h3 style="text-align:center;"><a href="/index.php">GroupDocs PHP SDK Samples</a> - Sample10</h3>
+
+<div class='samplecontent' style="padding:10px;">
+   <i>This sample will show how to share particular document from your GroupDocs account to other GroupDocs users using PHP SDK</i> <br/>
+    <br />
+    <a href="/docs/sample10.html">Docs for this sample</a>
+    <br />
+   <br/><p>You entered: 
+   <p>ClientID = {{@userId}}
+   <p>PrivateKey = {{@privateKey}}
+   <p>FileId = {{@fileId}}
+   <p>Email = {{@email}}
+   <p><font color="red">{{@error}}</font>
+   <div id="requestForm" style="padding:20px; border:1px solid black;">
+   <p> Enter data for request and press "Make request" button </p>
+        <form action="/sample10" method = "post" enctype = 'multipart/form-data'>
+           <label for='client_id'>GroupDocs ClientID</label>
+            <br />
+            <input type='text', name='client_id' value="{{@userId}}" />
+            <br />
+            <label for='private_key'>GroupDocs PrivateKey</label>
+            <br />
+            <input type='text', name='private_key'  value="{{@privateKey}}" />
+            <br />
+            <label for='file_Id'>GroupDocs fileID</label>
+            <br />
+            <input type='text', name='fileId'  value="{{@fileId}}" />
+            <br />
+            <label for='email'>Your email</label>
+            <br />
+            <input type='text', name='email'  value="{{@email}}" />
+            <br />
+            <input type='submit' value='Make Request'/>
+        </form>
+   </div>
+   <div  style="padding:20px; border:1px solid black;">
+       <p><h3><font color="green">Document shared to user with e-mail <h1>{{@shared}}</h1></font></h3>
+   </div>
+   <br/>
+</div>
+
+ <include href="links.htm" />
+</body>
+</html>
