@@ -314,7 +314,7 @@ class APIClient {
 				} else {
 					// trigger_error("class $class has no property $property", E_USER_WARNING);
 					// ignore newly added attributes
-                    continue;
+					continue;
 				}
 			}
 

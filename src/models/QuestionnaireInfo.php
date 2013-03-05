@@ -35,7 +35,9 @@ class QuestionnaireInfo {
       'assigned_questions' => 'int',
       'total_questions' => 'int',
       'modified' => 'string',
-      'expires' => 'string'
+      'expires' => 'string',
+      'folder' => 'string',
+      'emails' => 'string'
 
     );
 
@@ -51,5 +53,7 @@ class QuestionnaireInfo {
   public $total_questions; // int
   public $modified; // string
   public $expires; // string
+  public $folder; // string
+  public $emails; // string
   }
 

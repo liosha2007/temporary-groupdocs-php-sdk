@@ -21,7 +21,7 @@
  */
 class AntApi {
 
-	private $basePath = "https://api.groupdocs.com/v2.0";
+	private $basePath = "https://dev-api.groupdocs.com/v2.0";
 
 	function __construct($apiClient) {
 	  $this->apiClient = $apiClient;
@@ -629,6 +629,48 @@ class AntApi {
   	  return $responseObject;
       }
   /**
+	 * ResizeAnnotation
+	 * Resize annotation
+   * userId, string: User GUID (required)
+   * annotationId, string: Annotation ID (required)
+   * body, AnnotationSizeInfo: position (required)
+   * @return ResizeAnnotationResponse
+	 */
+
+   public function ResizeAnnotation($userId, $annotationId, $body) {
+      if( $userId === null || $annotationId === null || $body === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/ant/{userId}/annotations/{annotationId}/size");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "PUT";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		if($annotationId !== null) {
+  			$resourcePath = str_replace("{" . "annotationId" . "}",
+  			                            $annotationId, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'ResizeAnnotationResponse');
+  	  return $responseObject;
+      }
+  /**
 	 * SetAnnotationAccess
 	 * Set Annotation Access
    * userId, string: User GUID (required)
@@ -894,6 +936,48 @@ class AntApi {
       }
       //parse inputs
   	  $resourcePath = str_replace("*", "", "/ant/{userId}/annotations/{annotationId}/textFieldInfo");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "PUT";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		if($annotationId !== null) {
+  			$resourcePath = str_replace("{" . "annotationId" . "}",
+  			                            $annotationId, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'SaveAnnotationTextResponse');
+  	  return $responseObject;
+      }
+  /**
+	 * SetTextFieldColor
+	 * Save Text Of Text Field
+   * userId, string: User GUID (required)
+   * annotationId, string: Annotation ID (required)
+   * body, int: Font Color (required)
+   * @return SaveAnnotationTextResponse
+	 */
+
+   public function SetTextFieldColor($userId, $annotationId, $body) {
+      if( $userId === null || $annotationId === null || $body === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/ant/{userId}/annotations/{annotationId}/textFieldColor");
   	  $resourcePath = str_replace("{format}", "json", $resourcePath);
   	  $method = "PUT";
       $queryParams = array();

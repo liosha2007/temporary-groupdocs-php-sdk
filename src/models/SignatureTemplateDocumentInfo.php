@@ -30,7 +30,8 @@ class SignatureTemplateDocumentInfo {
       'name' => 'string',
       'originalDocumentMD5' => 'string',
       'originalDocumentPagesCount' => 'int',
-      'fieldsCount' => 'int'
+      'fieldsCount' => 'int',
+      'originalDocumentId' => 'string'
 
     );
 
@@ -41,5 +42,6 @@ class SignatureTemplateDocumentInfo {
   public $originalDocumentMD5; // string
   public $originalDocumentPagesCount; // int
   public $fieldsCount; // int
+  public $originalDocumentId; // string
   }
 

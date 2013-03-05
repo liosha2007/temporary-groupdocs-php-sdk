@@ -32,7 +32,7 @@ class UserInfo {
       'claimed_id' => 'string',
       'token' => 'string',
       'storage' => 'int',
-      'photo' => 'string',
+      'photo' => 'array[int]',
       'active' => 'bool',
       'trial' => 'bool',
       'news_eanbled' => 'bool',
@@ -41,6 +41,35 @@ class UserInfo {
       'support_email' => 'string',
       'annotation_branded' => 'bool',
       'viewer_branded' => 'bool',
+      'is_real_time_broadcast_enabled' => 'bool',
+      'is_scroll_broadcast_enabled' => 'bool',
+      'is_zoom_broadcast_enabled' => 'bool',
+      'annotation_logo' => 'array[int]',
+      'pointer_tool_cursor' => 'array[int]',
+      'annotation_header_options' => 'int',
+      'is_annotation_navigation_widget_enabled' => 'bool',
+      'is_annotation_zoom_widget_enabled' => 'bool',
+      'is_annotation_download_widget_enabled' => 'bool',
+      'is_annotation_print_widget_enabled' => 'bool',
+      'is_annotation_help_widget_enabled' => 'bool',
+      'is_right_panel_enabled' => 'bool',
+      'is_thumbnails_panel_enabled' => 'bool',
+      'is_standard_header_always_shown' => 'bool',
+      'is_toolbar_enabled' => 'bool',
+      'is_text_annotation_button_enabled' => 'bool',
+      'is_rectangle_annotation_button_enabled' => 'bool',
+      'is_point_annotation_button_enabled' => 'bool',
+      'is_strikeout_annotation_button_enabled' => 'bool',
+      'is_polyline_annotation_button_enabled' => 'bool',
+      'is_typewriter_annotation_button_enabled' => 'bool',
+      'is_watermark_annotation_button_enabled' => 'bool',
+      'viewer_logo' => 'array[int]',
+      'viewer_options' => 'int',
+      'is_viewer_navigation_widget_enabled' => 'bool',
+      'is_viewer_zoom_widget_enabled' => 'bool',
+      'is_viewer_download_widget_enabled' => 'bool',
+      'is_viewer_print_widget_enabled' => 'bool',
+      'is_viewer_help_widget_enabled' => 'bool',
       'signedupOn' => 'string',
       'signedinOn' => 'string',
       'signin_count' => 'int',
@@ -59,7 +88,7 @@ class UserInfo {
   public $claimed_id; // string
   public $token; // string
   public $storage; // int
-  public $photo; // string
+  public $photo; // array[int]
   public $active; // bool
   public $trial; // bool
   public $news_eanbled; // bool
@@ -68,6 +97,35 @@ class UserInfo {
   public $support_email; // string
   public $annotation_branded; // bool
   public $viewer_branded; // bool
+  public $is_real_time_broadcast_enabled; // bool
+  public $is_scroll_broadcast_enabled; // bool
+  public $is_zoom_broadcast_enabled; // bool
+  public $annotation_logo; // array[int]
+  public $pointer_tool_cursor; // array[int]
+  public $annotation_header_options; // int
+  public $is_annotation_navigation_widget_enabled; // bool
+  public $is_annotation_zoom_widget_enabled; // bool
+  public $is_annotation_download_widget_enabled; // bool
+  public $is_annotation_print_widget_enabled; // bool
+  public $is_annotation_help_widget_enabled; // bool
+  public $is_right_panel_enabled; // bool
+  public $is_thumbnails_panel_enabled; // bool
+  public $is_standard_header_always_shown; // bool
+  public $is_toolbar_enabled; // bool
+  public $is_text_annotation_button_enabled; // bool
+  public $is_rectangle_annotation_button_enabled; // bool
+  public $is_point_annotation_button_enabled; // bool
+  public $is_strikeout_annotation_button_enabled; // bool
+  public $is_polyline_annotation_button_enabled; // bool
+  public $is_typewriter_annotation_button_enabled; // bool
+  public $is_watermark_annotation_button_enabled; // bool
+  public $viewer_logo; // array[int]
+  public $viewer_options; // int
+  public $is_viewer_navigation_widget_enabled; // bool
+  public $is_viewer_zoom_widget_enabled; // bool
+  public $is_viewer_download_widget_enabled; // bool
+  public $is_viewer_print_widget_enabled; // bool
+  public $is_viewer_help_widget_enabled; // bool
   public $signedupOn; // string
   public $signedinOn; // string
   public $signin_count; // int

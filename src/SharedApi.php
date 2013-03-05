@@ -21,7 +21,7 @@
  */
 class SharedApi {
 
-	private $basePath = "https://api.groupdocs.com/v2.0";
+	private $basePath = "https://dev-api.groupdocs.com/v2.0";
 
 	function __construct($apiClient) {
 	  $this->apiClient = $apiClient;
@@ -43,13 +43,13 @@ class SharedApi {
 	 * Download
 	 * Download
    * guid, string: GUID (required)
-   * fileName, string: File name (optional)
+   * fileName, string: File name (required)
    * render, bool: Render (optional)
    * @return stream
 	 */
 
-   public function Download($guid, $fileName=null, $render=null, FileStream $outFileStream) {
-      if( $guid === null ) {
+   public function Download($guid, $fileName, $render=null, FileStream $outFileStream) {
+      if( $guid === null || $fileName === null ) {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs

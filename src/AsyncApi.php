@@ -21,7 +21,7 @@
  */
 class AsyncApi {
 
-	private $basePath = "https://api.groupdocs.com/v2.0";
+	private $basePath = "https://dev-api.groupdocs.com/v2.0";
 
 	function __construct($apiClient) {
 	  $this->apiClient = $apiClient;
@@ -52,7 +52,7 @@ class AsyncApi {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
-  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs/{jobId}");
+  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs/{jobId}?format=xml");
   	  $resourcePath = str_replace("{format}", "json", $resourcePath);
   	  $method = "GET";
       $queryParams = array();
@@ -632,21 +632,20 @@ class AsyncApi {
 	 * Convert
    * userId, string: User GUID (required)
    * fileId, string: File GUID (required)
-   * targetType, string: Target type (optional)
    * emailResults, string: Email results (optional)
    * description, string: Description (optional)
    * printScript, bool: Print (optional)
    * callbackUrl, string: Callback url (optional)
-   * checkDocumentOwnership, bool: Check Document Ownership (optional)
+   * new_type, string: Target type (optional)
    * @return ConvertResponse
 	 */
 
-   public function Convert($userId, $fileId, $targetType=null, $emailResults=null, $description=null, $printScript=null, $callbackUrl=null, $checkDocumentOwnership=null) {
+   public function Convert($userId, $fileId, $emailResults=null, $description=null, $printScript=null, $callbackUrl=null, $new_type=null) {
       if( $userId === null || $fileId === null ) {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
-  	  $resourcePath = str_replace("*", "", "/async/{userId}/files/{fileId}?new_type={targetType}&email_results={emailResults}&new_description={description}&print_script={printScript}&callback={callbackUrl}&checkDocumentOwnership={checkDocumentOwnership}");
+  	  $resourcePath = str_replace("*", "", "/async/{userId}/files/{fileId}?new_type={targetType}&email_results={emailResults}&new_description={description}&print_script={printScript}&callback={callbackUrl}");
   	  $pos = strpos($resourcePath, "?");
 	  if($pos !== false){
   	  	$resourcePath = substr($resourcePath, 0, $pos);
@@ -656,10 +655,7 @@ class AsyncApi {
       $queryParams = array();
       $headerParams = array();
 
-      if($targetType !== null) {
-  		  $queryParams['new_type'] = $this->apiClient->toPathValue($targetType);
-  		}
-  		if($emailResults !== null) {
+      if($emailResults !== null) {
   		  $queryParams['email_results'] = $this->apiClient->toPathValue($emailResults);
   		}
   		if($description !== null) {
@@ -671,8 +667,8 @@ class AsyncApi {
   		if($callbackUrl !== null) {
   		  $queryParams['callback'] = $this->apiClient->toPathValue($callbackUrl);
   		}
-  		if($checkDocumentOwnership !== null) {
-  		  $queryParams['checkDocumentOwnership'] = $this->apiClient->toPathValue($checkDocumentOwnership);
+  		if($new_type !== null) {
+  		  $queryParams['new_type'] = $this->apiClient->toPathValue($new_type);
   		}
   		if($userId !== null) {
   			$resourcePath = str_replace("{" . "userId" . "}",

@@ -32,7 +32,7 @@ class SignatureEnvelopeFieldInfo {
       'order' => 'float',
       'regularExpression' => 'string',
       'getDataFrom' => 'string',
-      'data' => 'string',
+      'data' => 'array[int]',
       'fillTimeStamp' => 'string',
       'signatureFieldId' => 'float',
       'locations' => 'array[SignatureEnvelopeFieldLocationInfo]',
@@ -51,7 +51,7 @@ class SignatureEnvelopeFieldInfo {
   public $order; // float
   public $regularExpression; // string
   public $getDataFrom; // string
-  public $data; // string
+  public $data; // array[int]
   public $fillTimeStamp; // string
   public $signatureFieldId; // float
   public $locations; // array[SignatureEnvelopeFieldLocationInfo]

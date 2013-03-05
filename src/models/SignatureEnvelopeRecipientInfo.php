@@ -38,7 +38,8 @@ class SignatureEnvelopeRecipientInfo {
       'signatureFingerprint' => 'string',
       'signatureHost' => 'string',
       'signatureLocation' => 'string',
-      'signatureBrowser' => 'string'
+      'signatureBrowser' => 'string',
+      'embedUrl' => 'string'
 
     );
 
@@ -57,5 +58,6 @@ class SignatureEnvelopeRecipientInfo {
   public $signatureHost; // string
   public $signatureLocation; // string
   public $signatureBrowser; // string
+  public $embedUrl; // string
   }
 

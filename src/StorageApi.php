@@ -21,7 +21,7 @@
  */
 class StorageApi {
 
-	private $basePath = "https://api.groupdocs.com/v2.0";
+	private $basePath = "https://dev-api.groupdocs.com/v2.0";
 
 	function __construct($apiClient) {
 	  $this->apiClient = $apiClient;
@@ -501,12 +501,12 @@ class StorageApi {
    * userId, string: User GUID (required)
    * path, string: Path (required)
    * mode, string: Mode (optional)
-   * Groupdocs_Copy, string: File ID (copy) (optional)
    * Groupdocs_Move, string: File ID (move) (optional)
+   * Groupdocs_Copy, string: File ID (copy) (optional)
    * @return FileMoveResponse
 	 */
 
-   public function MoveFile($userId, $path, $mode=null, $Groupdocs_Copy=null, $Groupdocs_Move=null) {
+   public function MoveFile($userId, $path, $mode=null, $Groupdocs_Move=null, $Groupdocs_Copy=null) {
       if( $userId === null || $path === null ) {
         throw new ApiException("missing required parameters", 400);
       }
@@ -524,11 +524,11 @@ class StorageApi {
       if($mode !== null) {
   		  $queryParams['mode'] = $this->apiClient->toPathValue($mode);
   		}
-  		if($Groupdocs_Copy !== null) {
-  		 	$headerParams['Groupdocs-Copy'] = $this->apiClient->toPathValue($Groupdocs_Copy);
-  		}
-      if($Groupdocs_Move !== null) {
+  		if($Groupdocs_Move !== null) {
   		 	$headerParams['Groupdocs-Move'] = $this->apiClient->toPathValue($Groupdocs_Move);
+  		}
+      if($Groupdocs_Copy !== null) {
+  		 	$headerParams['Groupdocs-Copy'] = $this->apiClient->toPathValue($Groupdocs_Copy);
   		}
       if($userId !== null) {
   			$resourcePath = str_replace("{" . "userId" . "}",
